@@ -1,2 +1,2 @@
-# fruit_website_task
+# Responsive_website_task
 DEPI Task: Responsive website 
