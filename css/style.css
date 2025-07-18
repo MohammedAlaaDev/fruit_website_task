@@ -18,6 +18,7 @@
 body {
     font-family: "Open Sans", sans-serif;
     background-color: var(--main-color);
+    overflow-x: hidden;
 }
 
 /* Default (mobile-first) */
@@ -437,12 +438,6 @@ nav .options .icons i.bag.notification::after {
 .landing .landing-background img {
     width: 483px;
     height: 673px;
-}
-
-@media (max-width: 500px){
-    .landing .landing-background img {
-        display: none;
-    }
 }
 
 @media (max-width: 1199px) {
