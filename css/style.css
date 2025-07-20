@@ -663,7 +663,7 @@ nav .options .icons i.bag.notification::after {
 .landing-offers {
     width: 100%;
     height: fit-content;
-    background-color: rgba(37, 37, 37, 0.6);
+    background-color: rgb(39 39 39 / 80%);
     display: flex;
     justify-content: space-between;
     position: relative;
