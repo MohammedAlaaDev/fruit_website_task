@@ -473,33 +473,9 @@ nav .options .icons i.bag.notification::after {
 
 /* Start Landing Section */
 .landing {
-    height: calc(100vh + 25px);
+    height: fit-content;
     background-image: radial-gradient(rgb(57 57 70) 0%, #000);
     position: relative;
-}
-
-@media (max-width: 1399px) {
-    .landing {
-        height: calc(100vh + 100px);
-    }
-}
-
-@media (max-width: 767px) {
-    .landing {
-        height: calc(100vh + 275px);
-    }
-}
-
-@media (max-width: 360px) {
-    .landing {
-        height: calc(100vh + 400px);;
-    }
-}
-
-@media (max-width: 210px) {
-    .landing {
-        height: calc(100vh + 500px);
-    }
 }
 
 /* Fixed Social Media ( Scroll ) */
@@ -688,11 +664,10 @@ nav .options .icons i.bag.notification::after {
     width: 100%;
     height: fit-content;
     background-color: rgba(37, 37, 37, 0.6);
-    position: absolute;
-    left: 0;
-    bottom: 0;
     display: flex;
     justify-content: space-between;
+    position: relative;
+    margin-top: 20px;
 }
 
 @media (max-width: 1199px) {
