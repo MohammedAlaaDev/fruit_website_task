@@ -19,6 +19,7 @@
 
 html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 
 body {
@@ -485,19 +486,19 @@ nav .options .icons i.bag.notification::after {
 
 @media (max-width: 767px) {
     .landing {
-        height: calc(100vh + 600px);
+        height: calc(100vh + 275px);
     }
 }
 
 @media (max-width: 360px) {
     .landing {
-        height: calc(100vh + 800px);
+        height: calc(100vh + 400px);;
     }
 }
 
 @media (max-width: 210px) {
     .landing {
-        height: calc(100vh + 1000px);
+        height: calc(100vh + 500px);
     }
 }
 
