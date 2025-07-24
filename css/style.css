@@ -7,10 +7,9 @@
     --main-transition: 0.3s;
     --section-padding: 100px;
 }
-
 /* End Variables */
 
-/* Start Global Styling */
+/* ================= Start Global Styling ================= */
 * {
     margin: 0;
     padding: 0;
@@ -62,6 +61,7 @@ button.buy {
 
 button.buy:hover {
     opacity: 1;
+    box-shadow: 0px 0px 20px 0px var(--third-color), 0px 10px 14px 0px black;
 }
 
 .card {
@@ -116,7 +116,7 @@ button.buy:hover {
 .card .text .purchase .cart i {
     cursor: pointer;
 }
-/* End Global Styling */
+
 
 /* Start Section Heading Styling */
 .section-heading {
@@ -179,8 +179,10 @@ button.buy:hover {
         translate: 10px 0;
     }
 }
-
 /* End Section Heading Styling */
+
+/* ================= End Global Styling ================= */
+
 
 /* Default (mobile-first) */
 .container {
@@ -353,7 +355,6 @@ nav .options .links {
 
     nav .bar-icon:hover+.links,
     nav .bar-icon+.links:hover {
-        display: flex;
         top: calc(100% + 15px);
         visibility: visible;
         opacity: 1;
@@ -901,3 +902,26 @@ nav .options .icons i.bag.notification::after {
     }
 }
 /* End Favorite Section */
+
+/* Start Fruit Shop */
+.shop {
+    padding-top: var(--section-padding);
+}
+
+.shop .content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    color: white;
+}
+
+@media(max-width: 330px) {
+    .shop .content {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+}
+
+/* note: the styling of cards is in global styling
+( go to the beginning of this file ) */
+
+/* End Fruit Shop */
