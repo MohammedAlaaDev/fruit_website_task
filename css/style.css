@@ -7,6 +7,7 @@
     --main-transition: 0.3s;
     --section-padding: 100px;
 }
+
 /* End Variables */
 
 /* ================= Start Global Styling ================= */
@@ -24,8 +25,7 @@ html {
 body {
     font-family: "Open Sans", sans-serif;
     background-color: var(--main-color);
-    overflow-x: hidden;
-    height: 10000px;
+    overflow: hidden;
 }
 
 p {
@@ -165,19 +165,36 @@ button.buy:hover {
     }
 }
 
-.section-heading button i {
-    animation: go-right 1s ease-in-out infinite alternate ;
-    -webkit-animation: go-right 1s ease-in-out infinite alternate ;
+.section-heading button i.rightA {
+    animation: go-right 1s ease-in-out infinite alternate;
+    -webkit-animation: go-right 1s ease-in-out infinite alternate;
+}
+
+.section-heading button i.leftA {
+    animation: go-left 1s ease-in-out infinite alternate;
+    -webkit-animation: go-left 1s ease-in-out infinite alternate;
 }
 
 @keyframes go-right {
     0% {
         translate: 0 0;
     }
+
     100% {
         translate: 10px 0;
     }
 }
+
+@keyframes go-left {
+    0% {
+        translate: 0 0;
+    }
+
+    100% {
+        translate: -10px 0;
+    }
+}
+
 /* End Section Heading Styling */
 
 /* ================= End Global Styling ================= */
@@ -244,7 +261,10 @@ nav {
     color: white;
     box-shadow: black 0px 0px 15px 0px;
     z-index: 3;
-    position: relative;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
 }
 
 nav .container {
@@ -476,6 +496,7 @@ nav .options .icons i.bag.notification::after {
     height: fit-content;
     background-image: radial-gradient(rgb(57 57 70) 0%, #000);
     position: relative;
+    margin-top: 113px;
 }
 
 /* Fixed Social Media ( Scroll ) */
@@ -584,10 +605,10 @@ nav .options .icons i.bag.notification::after {
     color: var(--secondary-color);
 }
 
-@media (max-width: 767px) { 
+@media (max-width: 767px) {
     .landing .landing-background .fruit-title p {
         font-size: 14px;
-    }    
+    }
 }
 
 @media (max-width: 1199px) {
@@ -626,7 +647,7 @@ nav .options .icons i.bag.notification::after {
     font-size: 64px;
 }
 
-@media (max-width: 767px) { 
+@media (max-width: 767px) {
     .landing .landing-background .fruit-info .text h2 span:not(.different) {
         font-size: 32px;
     }
@@ -696,6 +717,7 @@ nav .options .icons i.bag.notification::after {
         padding-top: 20px;
         padding-bottom: 20px;
     }
+
     .landing-offers .offer:not(:last-child) {
         border-bottom: 2px solid var(--secondary-color);
         padding-bottom: 20px;
@@ -714,9 +736,11 @@ nav .options .icons i.bag.notification::after {
         background-size: cover;
         opacity: 0.5;
     }
+
     .landing-offers .offer:first-child:before {
         background-image: url(../images/orange.jpg);
     }
+
     .landing-offers .offer:last-child:before {
         background-image: url(../images/melon.jpg);
     }
@@ -764,7 +788,7 @@ nav .options .icons i.bag.notification::after {
 
 .landing-offers .offer .info .text {
     padding: 25px 10px 25px 25px;
-    
+
 }
 
 @media (max-width: 1399px) {
@@ -816,6 +840,7 @@ nav .options .icons i.bag.notification::after {
 }
 
 @media (max-width: 991px) {
+
     .landing-offers .offer .info .text p.description,
     .landing-offers .offer .info .text p.feature {
         max-width: 420px;
@@ -823,6 +848,7 @@ nav .options .icons i.bag.notification::after {
 }
 
 @media (max-width: 513px) {
+
     .landing-offers .offer .info .text p.description,
     .landing-offers .offer .info .text p.feature {
         color: white;
@@ -834,7 +860,7 @@ nav .options .icons i.bag.notification::after {
     justify-content: center;
     align-items: center;
     gap: 5px;
-} 
+}
 
 .landing-offers .offer .info .text .bullets .bullet {
     width: 15px;
@@ -851,7 +877,7 @@ nav .options .icons i.bag.notification::after {
     -ms-transition: var(--main-transition);
     -o-transition: var(--main-transition);
     cursor: pointer;
-} 
+}
 
 .landing-offers .offer .info .text .bullets .bullet.active,
 .landing-offers .offer .info .text .bullets .bullet:hover {
@@ -860,7 +886,7 @@ nav .options .icons i.bag.notification::after {
 }
 
 @media (max-width: 513px) {
-    .landing-offers .offer .info .text .bullets .bullet{
+    .landing-offers .offer .info .text .bullets .bullet {
         border-color: white;
     }
 }
@@ -881,6 +907,7 @@ nav .options .icons i.bag.notification::after {
     gap: 10px;
     margin-bottom: 5px;
 }
+
 /* End Landing Section */
 
 /* Start Favorite Section */
@@ -900,6 +927,7 @@ nav .options .icons i.bag.notification::after {
         grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     }
 }
+
 /* End Favorite Section */
 
 /* Start Fruit Shop */
@@ -924,3 +952,145 @@ nav .options .icons i.bag.notification::after {
 ( go to the beginning of this file ) */
 
 /* End Fruit Shop */
+
+/* Start About */
+.about {
+    padding-top: var(--section-padding);
+    padding-bottom: calc(var(--section-padding) / 2);
+}
+
+.about .testimonials {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px
+}
+
+.about .testimonials .testimonial {
+    background-color: var(--fourth-color);
+    padding: 20px;
+}
+
+.about .testimonials .testimonial .head {
+    display: flex;
+    margin-bottom: 20px;
+    gap: 20px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.about .testimonials .testimonial .head img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.about .testimonials .testimonial .head .icons {
+    color: white;
+}
+
+.about .testimonials .testimonial .text {
+    color: white;
+}
+
+.about .testimonials .testimonial .text h2 {
+    margin-bottom: 10px;
+}
+
+/* End About */
+
+/* Start Footer */
+.footer{
+    padding: var(--section-padding) 0 20px 0;
+}
+.footer .row1{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+    align-items: center;
+}
+.footer .row1 h3{
+    color: var(--secondary-color);
+    font-weight: 800;
+    font-size: 26px;
+    margin: 0 auto;
+}
+.footer .row1 form {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+}
+.footer .row1 form .textinpt{
+    background-color: transparent;
+    border: 1px solid white;
+    padding: 10px 20px;
+    max-width: 400px;
+    outline: none;
+    color: white;
+}
+.footer .row1 form .sbmtinpt{
+    padding: 10px 20px;
+    border: 1px solid white;
+    cursor: pointer;
+
+}
+.footer .row1 .social-media{
+    background-color: var(--fourth-color);
+    color: white;
+    padding: 40px;
+    margin: 0 auto;
+}
+.footer .row1 .social-media .icons {
+    margin-top: 10px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+.footer .row1 .social-media .icons i {
+    color: white;
+    font-size: 20px;
+}
+.footer .row1 .social-media .icons .insta {
+    padding: 5px;
+    border: 1px solid white;
+}
+.footer .row2{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 10px;
+    align-items: center;
+}
+.footer .row2 .logo{
+    margin-top: 40px;
+    text-decoration: none;
+    color: white;
+    width: fit-content;
+    display: block;
+}
+.footer .row2 .logo h1{
+    font-weight: bold;
+    margin: 0;
+}
+.footer .row2 .logo p{
+    font-family: "Sacramento", cursive;
+    font-weight: 100;
+    font-size: 28px;
+    margin: 0;
+}
+.footer .row2 .links{
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+
+}
+.footer .row2 .links a{
+    text-decoration: none;
+    color: white;
+}
+.footer .row2 p {
+    margin-top: 15px;
+    color: white;
+}
+/* End Footer */
